@@ -1,2 +1,2 @@
-> This repository servers as compettive programming concepts in
+> This repository serves as source of competitive programming concepts in the
 > golang programming language.
