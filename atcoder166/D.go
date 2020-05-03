@@ -50,11 +50,20 @@ func Ceil(x, y int64) int64 {
 func main() {
     defer Writer.Flush()
 
-    var t int = 1
-    Scanf("%d\n", &t)
+    var temp1, temp2, a, b, x int64
+    Scanf("%d\n", &x)
 
-    for t > 0; t -=1 {
+    max_limit := int64(1000)
 
+    for a = -max_limit; a <= max_limit; a += 1 {
+        for b = -max_limit; b < a; b += 1 {
+            temp1 = a*a*a*a*a
+            temp2 = b*b*b*b*b
 
+            if temp1 - temp2 == x {
+                Printf("%d %d\n", a, b)
+                return
+            }
+        }
     }
 }

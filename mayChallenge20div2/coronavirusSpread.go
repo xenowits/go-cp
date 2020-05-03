@@ -22,7 +22,7 @@ func Abs(x int) int {
     return x
 }
 
-func Min(x, y int) int {
+func Min(x, y int64) int64 {
     if x < y {
         return x
     } else {
@@ -30,7 +30,7 @@ func Min(x, y int) int {
     }
 }
 
-func Max(x, y int) int {
+func Max(x, y int64) int64 {
     if x >= y {
         return x
     } else {
@@ -53,8 +53,44 @@ func main() {
     var t int = 1
     Scanf("%d\n", &t)
 
-    for t > 0; t -=1 {
+    for ; t > 0; t -= 1 {
+        var n int
+        Scanf("%d\n", &n)
+        arr := make([]int, n)
+        no_line := make([]bool, 11)
+        ans := make([]int, 11)
 
+        maxu := int(-1e7)
+        minu := int(1e7)
+
+        for i := 0; i < n; i += 1 {
+            Scanf("%d ", &arr[i])
+            no_line[arr[i]] = true
+        }
+
+        for i := 0; i < 11; i += 1 {
+            ans_temp := 1
+            if no_line[i] {
+                for j := i
+            }
+        }
+
+        iter := []int {-2, -1, 1, 2}
+
+        // Println(iter, arr, m)
+
+        for i := 0; i < n; i += 1 {
+
+
+
+            if temp1 > maxu {
+                maxu = temp1
+            } else if temp1 < minu {
+                minu = temp1
+            }
+        }
+
+        Printf("%d %d\n", minu+1, maxu+1)
 
     }
 }

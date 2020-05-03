@@ -50,11 +50,11 @@ func Ceil(x, y int64) int64 {
 func main() {
     defer Writer.Flush()
 
-    var t int = 1
-    Scanf("%d\n", &t)
-
-    for t > 0; t -=1 {
-
-
+    var s string
+    Scanf("%s\n", &s)
+    if s == "ABC" {
+        Println("ARC")
+    } else {
+        Println("ABC")
     }
 }

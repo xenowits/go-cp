@@ -25,3 +25,10 @@ func main() {
   scanf("%d %d\n", &a, &b)
   printf("%d\n", a+b)
 }
+
+
+//Important golang links:
+
+1. https://stackoverflow.com/questions/38013922/slicing-a-slice-pointer-passed-as-argument
+
+2. 

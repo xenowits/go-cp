@@ -50,11 +50,36 @@ func Ceil(x, y int64) int64 {
 func main() {
     defer Writer.Flush()
 
-    var t int = 1
-    Scanf("%d\n", &t)
+    var n, k, d int
+    Scanf("%d %d\n", &n, &k)
 
-    for t > 0; t -=1 {
+    var arr [105][105]bool
 
-
+    for i := 1; i <= k; i += 1 {
+        Scanf("%d\n", &d)
+        var temp int
+        for j := 0; j < d; j += 1 {
+            Scanf("%d ", &temp)
+            arr[temp][i] = true
+        }
     }
+
+    //find ans
+    cnt := 0
+
+    for i := 1; i <= n; i += 1 {
+        flag := false
+        for j := 1; j <= k; j += 1 {
+            if arr[i][j] {
+                flag = true
+                break
+            }
+        }
+        if !flag  {
+            cnt += 1
+        }
+    }
+
+    Println(cnt)
+
 }

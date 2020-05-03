@@ -50,11 +50,18 @@ func Ceil(x, y int64) int64 {
 func main() {
     defer Writer.Flush()
 
-    var t int = 1
-    Scanf("%d\n", &t)
+    var x int64
+    Scanf("%d\n", &x)
 
-    for t > 0; t -=1 {
+    y := int64(100)
+    cnt := 0
 
-
+    for y < x {
+        temp := float64(y)
+        temp *= 1.01
+        cnt += 1
+        y = int64(temp)
     }
+
+    Println(cnt)
 }

@@ -50,11 +50,45 @@ func Ceil(x, y int64) int64 {
 func main() {
     defer Writer.Flush()
 
-    var t int = 1
-    Scanf("%d\n", &t)
+    var n, m int
+    Scanf("%d %d\n", &n, &m)
 
-    for t > 0; t -=1 {
+    heights := make([]int, n+5)
+    var a, b int
 
-
+    for i := 1; i <= n; i += 1 {
+        Scanf("%d ", &heights[i])
     }
+
+    adj := make([][]int, n+5)
+
+    for i := 1; i <= m; i += 1 {
+        Scanf("%d %d\n", &a, &b)
+        adj[a] = append(adj[a], b)
+        adj[b] = append(adj[b], a)
+    }
+
+    // Println(adj)
+
+    cnt := 0
+
+    for i := 1; i <= n; i += 1 {
+
+        if len(adj[i]) == 0 {
+            cnt += 1
+        } else {
+            flag := false
+            for j := 0; j < len(adj[i]); j += 1 {
+                if heights[i] <= heights[adj[i][j]] {
+                    flag = true
+                    break
+                }
+            }
+            if !flag {
+                cnt += 1
+            }
+        }
+    }
+
+    Println(cnt)
 }

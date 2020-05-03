@@ -51,7 +51,7 @@ func main() {
     defer Writer.Flush()
 
     var t int = 1
-    Scanf("%d\n", &t)
+    Scanln(&t)
 
     for t > 0; t -=1 {
 

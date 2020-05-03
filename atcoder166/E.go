@@ -50,11 +50,22 @@ func Ceil(x, y int64) int64 {
 func main() {
     defer Writer.Flush()
 
-    var t int = 1
-    Scanf("%d\n", &t)
+    var n int
+    Scanf("%d\n", &n)
 
-    for t > 0; t -=1 {
+    arr := make([]int, n+1)
 
+    m := make(map[int]int)
+    cnt := 0
 
+    for i := 1; i <= n; i += 1 {
+        Scanf("%d ", &arr[i])
+        temp := i-arr[i]
+        cnt += m[temp]
+        m[arr[i]+i] += 1;
+        // Println(i, temp, arr[i], i, cnt, m)
     }
+
+    Println(cnt)
+
 }

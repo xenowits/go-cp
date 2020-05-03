@@ -15,46 +15,16 @@ func Println (a ...interface{}) { fmt.Fprintln(Writer, a...)}
 func Scanln (a ...interface{}) { fmt.Fscanln(Reader, a...)}
 //I/O ENDS HERE
 
-func Abs(x int) int {
-    if x < 0 {
-        return -x
-    }
-    return x
-}
 
-func Min(x, y int) int {
-    if x < y {
-        return x
-    } else {
-        return y
-    }
-}
-
-func Max(x, y int) int {
-    if x >= y {
-        return x
-    } else {
-        return y
-    }
-}
-
-func Ceil(x, y int64) int64 {
-    //returns x/y
-    if x%y == 0 {
-        return x/y
-    } else {
-        return int64(x/y)+1
-    }
-}
 
 func main() {
     defer Writer.Flush()
 
     var t int = 1
-    Scanf("%d\n", &t)
+    Scanln(&t)
 
     for t > 0; t -=1 {
-
+        
 
     }
 }

@@ -22,7 +22,7 @@ func Abs(x int) int {
     return x
 }
 
-func Min(x, y int) int {
+func Min(x, y int64) int64 {
     if x < y {
         return x
     } else {
@@ -30,7 +30,7 @@ func Min(x, y int) int {
     }
 }
 
-func Max(x, y int) int {
+func Max(x, y int64) int64 {
     if x >= y {
         return x
     } else {
@@ -50,11 +50,16 @@ func Ceil(x, y int64) int64 {
 func main() {
     defer Writer.Flush()
 
-    var t int = 1
-    Scanf("%d\n", &t)
+    var a, b, n int64
+    Scanf("%d %d %d\n", &a, &b, &n)
 
-    for t > 0; t -=1 {
+  	x := Min(b-1, n)
+
+    temp1 := int64((a*x)/b)
+    temp2 := a*int64(x/b)
+    // Println(temp1, temp2)
+  	ans := (temp1 - temp2)
 
 
-    }
+    Println(ans)
 }
